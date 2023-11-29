@@ -15,7 +15,7 @@ builder.Services.AddInfrastructureServices(builder.Configuration);
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy",
-        builder => builder.AllowAnyOrigin()
+        builder => builder.AllowAnyOrigin().AllowAnyHeader()
          ); 
 });
 var app = builder.Build();
