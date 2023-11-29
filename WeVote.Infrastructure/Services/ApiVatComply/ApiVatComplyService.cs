@@ -5,6 +5,7 @@ using System.Net.Http;
 using System.Text.Json;
 using WeVote.Infrastructure.Services.ApiVatComply.Contract;
 using WeVote.Infrastructure.Services.ApiVatComply.ServiceResponses;
+using WeVote.Infrastructure.Utils;
 
 namespace WeVote.Infrastructure.Services.ApiVatComply
 {

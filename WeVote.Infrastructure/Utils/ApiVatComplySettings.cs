@@ -1,5 +1,4 @@
-﻿
-namespace WeVote.Infrastructure.Services.ApiVatComply
+﻿namespace WeVote.Infrastructure.Utils
 {
     public class ApiVatComplySettings
     {

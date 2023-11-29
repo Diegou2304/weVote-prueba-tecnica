@@ -5,8 +5,8 @@
 @inject HttpClient HttpClient
 <PageTitle>Index</PageTitle>
 
-<h2> @getGeolocationResult.Name</h2>
-<h3> Tu Currency es @currencyName</h3>
+<h2> Tu país es: @getGeolocationResult.Name</h2>
+<h3> Tu Currency Es: @currencyName</h3>
 @code {
     GetGeolocationResult getGeolocationResult = new();
     string currencyName;
@@ -17,11 +17,13 @@
                                     .GetFromJsonAsync<GetGeolocationResult>
                                     ("https://localhost:44302/Geolocation");
 
-        var dictionary = await HttpClient
+        var currency = await HttpClient
                                 .GetFromJsonAsync<Currency> 
                                 ($"https://localhost:44302/currencies?currency=USD");
 
-        currencyName = dictionary.Name;
+
+     
+        currencyName = currency.Name;
 
     }
 

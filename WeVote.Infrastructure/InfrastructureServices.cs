@@ -5,6 +5,7 @@ using Microsoft.Extensions.DependencyInjection;
 using WeVote.Infrastructure.Repositories;
 using WeVote.Infrastructure.Services.ApiVatComply;
 using WeVote.Infrastructure.Services.ApiVatComply.Contract;
+using WeVote.Infrastructure.Utils;
 
 namespace WeVote.Infrastructure
 {

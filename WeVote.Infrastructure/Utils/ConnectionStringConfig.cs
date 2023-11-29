@@ -1,4 +1,4 @@
-﻿namespace WeVote.Infrastructure.Repositories
+﻿namespace WeVote.Infrastructure.Utils
 {
     public class ConnectionStringConfig
     {

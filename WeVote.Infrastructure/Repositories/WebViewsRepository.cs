@@ -4,6 +4,7 @@ using Microsoft.Data.SqlClient;
 using Microsoft.Extensions.Options;
 using System.Net;
 using WeVote.Domain;
+using WeVote.Infrastructure.Utils;
 
 namespace WeVote.Infrastructure.Repositories
 {
