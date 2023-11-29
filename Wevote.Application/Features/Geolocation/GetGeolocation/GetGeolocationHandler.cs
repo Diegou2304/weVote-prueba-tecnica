@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using WeVote.Infrastructure.Services.ApiVatComply;
+using WeVote.Infrastructure.Services.ApiVatComply.Contract;
 
 namespace Wevote.Application.Features.Geolocation.GetGeolocation
 {

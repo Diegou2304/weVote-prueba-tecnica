@@ -2,7 +2,7 @@
 
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using WeVote.Infrastructure.Services.ApiVatComply;
+using WeVote.Infrastructure.Services.ApiVatComply.Contract;
 
 namespace Wevote.Application.Features.Currencies.GetCurrencies
 {
@@ -18,7 +18,21 @@ namespace Wevote.Application.Features.Currencies.GetCurrencies
         {
             var result = await _apiVatComplyService.GetCurrencies();
 
+            
+            if (request.Currency is not null)
+            {
+                if (!result.ContainsKey(request.Currency))
+                    return new BadRequestObjectResult(new { Message = $"The currency requested is not listed [{request.Currency}]" });
+
+
+                return new OkObjectResult(result[request.Currency]);
+
+
+            }
+
             return new OkObjectResult(result);
+
+
         }
     }
 }

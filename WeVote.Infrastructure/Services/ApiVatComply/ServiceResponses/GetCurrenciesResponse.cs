@@ -2,7 +2,7 @@
 
 using Newtonsoft.Json;
 
-namespace WeVote.Infrastructure.Services.ApiVatComply
+namespace WeVote.Infrastructure.Services.ApiVatComply.ServiceResponses
 {
     public class Currency
     {
@@ -13,5 +13,5 @@ namespace WeVote.Infrastructure.Services.ApiVatComply
         public string symbol { get; set; }
     }
 
-   
+
 }

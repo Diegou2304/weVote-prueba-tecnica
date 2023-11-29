@@ -1,6 +1,4 @@
-﻿
-
-namespace WeVote.Infrastructure.Services.ApiVatComply
+﻿namespace WeVote.Infrastructure.Services.ApiVatComply.ServiceResponses
 {
     public class GetGeologationResponse
     {
