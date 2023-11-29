@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Wevote.Application\Wevote.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\NewFolder\" />
+  </ItemGroup>
+
 </Project>

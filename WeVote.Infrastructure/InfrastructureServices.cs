@@ -2,7 +2,6 @@
 
 using Microsoft.Extensions.DependencyInjection;
 using System.Runtime.CompilerServices;
-using WeVote.Infrastructure.Services;
 using WeVote.Infrastructure.Services.ApiVatComply;
 
 namespace WeVote.Infrastructure

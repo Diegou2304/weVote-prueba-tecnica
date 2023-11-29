@@ -14,10 +14,13 @@ namespace WeVote.Infrastructure.Services.ApiVatComply
             _httpClientFactory = httpClientFactory;
             
         }
-        public  void GetCurrencies()
+        public  async Task<Dictionary<string, Currency>> GetCurrencies()
         {
-
-            throw new NotImplementedException();
+            var httpClient = _httpClientFactory.CreateClient();
+            var result = await httpClient.GetAsync("https://api.vatcomply.com/currencies");
+            var jsonString = await result.Content.ReadAsStringAsync();
+            var getCurrenciesResponse = JsonSerializer.Deserialize<Dictionary<string, Currency>>(jsonString);
+            return getCurrenciesResponse;
         }
 
         public async Task<GetGeologationResponse?> GetGeolocation()

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using WeVote.Infrastructure.Services;
+using WeVote.Infrastructure.Services.ApiVatComply;
 
 namespace Wevote.Application.Features.Geolocation.GetGeolocation
 {
@@ -17,7 +17,14 @@ namespace Wevote.Application.Features.Geolocation.GetGeolocation
         {
             var response = await _apiVatComplyService.GetGeolocation();
 
-            return new OkObjectResult(response);
+            var geolocationResult = new GetGeolocationResult
+            {
+                Name = response.name,
+                Ip = response.ip,
+                CountryCode = response.country_code,
+                Currency = response.currency
+            };
+            return new OkObjectResult(geolocationResult);
         }
     }
 }
