@@ -1,4 +1,4 @@
-﻿namespace WeVote.Client.GetGeolocation
+﻿namespace WeVote.Client.Pages.GetGeolocation
 {
     public class GetGeolocationResult
     {

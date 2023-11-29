@@ -1,51 +1,12 @@
 ﻿@page "/"
 @using System.Text;
-@using WeVote.Client.GetGeolocation;
-@using WeVote.Client.RegisterView;
+@using WeVote.Client.Pages.GetGeolocation;
+
+    
 @inject HttpClient HttpClient
 <PageTitle>Index</PageTitle>
 
-<h2> Tu país es: @getGeolocationResult.Name</h2>
-<h3> Tu Currency Es: @currencyName</h3>
-@code {
-    GetGeolocationResult getGeolocationResult = new();
-    string currencyName;
+<h2> Your country is: @getGeolocationResult.Name</h2>
+<h3> Your Currency is: @currencyName</h3>
 
-    protected override async Task OnInitializedAsync()
-    {
-        getGeolocationResult = await HttpClient
-                                    .GetFromJsonAsync<GetGeolocationResult>
-                                    ("https://localhost:44302/Geolocation");
-
-        var currency = await HttpClient
-                                .GetFromJsonAsync<Currency> 
-                                ($"https://localhost:44302/currencies?currency=USD");
-
-
-     
-        currencyName = currency.Name;
-
-    }
-
-    protected override async Task OnAfterRenderAsync(bool render)
-    {
-        var view = new RegisterView
-            {
-                CountryCode = getGeolocationResult.CountryCode,
-                CountryName = getGeolocationResult.Name,
-                CurrencyName = currencyName,
-                IpAddress = getGeolocationResult.Ip,
-
-            };
-        var json = System.Text.Json.JsonSerializer.Serialize(view);
-        var data = new StringContent(json, Encoding.UTF8, "application/json");
-        var shortenedUrl = await HttpClient
-            .PostAsync("https://localhost:44302/webviews", data);
-        Console.WriteLine(shortenedUrl);
-        var responseStringContent = shortenedUrl.Content.ReadAsStringAsync().Result;
-
-        Console.WriteLine(responseStringContent);
-
-
-    }
-}
+  

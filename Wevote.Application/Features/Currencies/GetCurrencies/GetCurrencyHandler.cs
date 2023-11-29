@@ -22,7 +22,7 @@ namespace Wevote.Application.Features.Currencies.GetCurrencies
             if (request.Currency is not null)
             {
                 if (!result.ContainsKey(request.Currency))
-                    return new BadRequestObjectResult(new { Message = $"The currency requested is not listed [{request.Currency}]" });
+                    return new NotFoundObjectResult(new { Message = $"The currency requested is could not be found [{request.Currency}]" });
 
 
                 return new OkObjectResult(result[request.Currency]);
