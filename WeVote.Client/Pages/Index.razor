@@ -1,9 +1,21 @@
 ﻿@page "/"
-
+@using WeVote.Client.GetGeolocation;
+@inject HttpClient HttpClient
 <PageTitle>Index</PageTitle>
 
-<h1>Hello, world!</h1>
+<h2> @getGeolocationResult.Name y tu currency es @currency</h2>
 
-Welcome to your new app.
+@code {
+    GetGeolocationResult getGeolocationResult = new();
+    string currency;
+    protected override async Task OnInitializedAsync()
+    {
+        getGeolocationResult = await HttpClient.GetFromJsonAsync<GetGeolocationResult>("https://localhost:44302/Geolocation");
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+        var dictionary = await HttpClient
+                                .GetFromJsonAsync<Currency> 
+                                ($"https://localhost:44302/currencies?currency=USD");
+        currency = dictionary.Name + dictionary.Symbol;
+
+    }
+}

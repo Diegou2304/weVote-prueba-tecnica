@@ -24,7 +24,9 @@ namespace Wevote.Application.Features.Geolocation.GetGeolocation
                 CountryCode = response.country_code,
                 Currency = response.currency
             };
-            return new OkObjectResult(geolocationResult);
+
+
+             return new OkObjectResult(geolocationResult);
         }
     }
 }
