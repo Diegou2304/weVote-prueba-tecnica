@@ -43,6 +43,8 @@ En el caso de Bolivia no cuenta con un currency, por eso dara un mensaje de erro
 Todos los requerimientos fueron desarrollados en su totalidad. Se tiene 3 Endpoints los cuales se encargan de realizar las operaciones directamente con el frontend. Los endopoints desarrollados consumen los endpoints
 entregados en la prueba técnica.
 
+# BASE DE DATOS
+El script para crear la tabla de la base se encuentra en el proyecto de infrastructura en la carpeta ***Scripts***
 
 # Registro de logs
 Para registrar los logs se utilizó Serilog, los logs iran saliendo en la consola. Además que se escribiran en el archivo indicado en los appsettings
