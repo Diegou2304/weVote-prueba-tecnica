@@ -65,11 +65,10 @@ namespace WeVote.Client.Pages
             var data = new StringContent(json, Encoding.UTF8, "application/json");
             var shortenedUrl = await HttpClient
                 .PostAsync($"{BaseUrl}/webviews", data);
-            Console.WriteLine(shortenedUrl);
-            var responseStringContent = shortenedUrl.Content.ReadAsStringAsync().Result;
 
-            Console.WriteLine(responseStringContent);
+     
 
+         
 
 
 
