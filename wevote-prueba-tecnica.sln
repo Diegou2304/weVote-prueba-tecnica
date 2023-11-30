@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33627.172
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeVote.Api", "WeVote.Api\WeVote.Api.csproj", "{2AF2E0BE-6E3D-4B19-B5A6-0FB61A60EAF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeVote.Api", "WeVote.Api\WeVote.Api.csproj", "{2AF2E0BE-6E3D-4B19-B5A6-0FB61A60EAF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wevote.Application", "Wevote.Application\Wevote.Application.csproj", "{857591A1-A1A3-4D06-8AF9-506895C22BE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Wevote.Application", "Wevote.Application\Wevote.Application.csproj", "{857591A1-A1A3-4D06-8AF9-506895C22BE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeVote.Infrastructure", "WeVote.Infrastructure\WeVote.Infrastructure.csproj", "{1B8BA133-73D6-4869-B215-A8003B1DF006}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeVote.Infrastructure", "WeVote.Infrastructure\WeVote.Infrastructure.csproj", "{1B8BA133-73D6-4869-B215-A8003B1DF006}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeVote.Domain", "WeVote.Domain\WeVote.Domain.csproj", "{937FC6B4-35B9-47B5-A88D-D2A84D618545}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeVote.Domain", "WeVote.Domain\WeVote.Domain.csproj", "{937FC6B4-35B9-47B5-A88D-D2A84D618545}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WeVote.Client", "WeVote.Client\WeVote.Client.csproj", "{1D649BD3-D264-4C85-B564-E8D882292423}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WeVote.Client", "WeVote.Client\WeVote.Client.csproj", "{1D649BD3-D264-4C85-B564-E8D882292423}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
