@@ -22,7 +22,10 @@ Este proyecto utiliza una base de datos SQL Server, pero no está programada para
 ## Actualizar Connection String
 
 En la carpeta WeVote.API  se pueden encontrar los appsettings.json. Por favor, una vez que hayas creado la base de datos actualiza la cadena de conexión. 
+## Actualizar BaseUrl de los servicios
 
+Dato que estan parametrizados las URL de los servicios. Se debe actualizar desde el appsettings.json para la API y en el Index.razor.cs en el caso de la pagina web.
+La pagina web debe apuntar a la api desarrollada por nosotros y nuestra api apuntar al servicio enviados por ustedes.
 
 ## Ejecutar el proyecto
 
