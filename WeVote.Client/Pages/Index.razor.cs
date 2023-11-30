@@ -28,7 +28,7 @@ namespace WeVote.Client.Pages
             {
                 getGeolocationResult = await HttpClient
                                         .GetFromJsonAsync<GetGeolocationResult>
-                                        ($"{BaseUrl}/Geolocation");
+                                        ($"{BaseUrl}/geolocations");
 
 
 
@@ -53,7 +53,7 @@ namespace WeVote.Client.Pages
         protected override async Task OnAfterRenderAsync(bool render)
         {
 
-            var view = new WeVote.Client.Pages.RegisterView.RegisterView
+            var view = new RegisterView.RegisterView
             {
                 CountryCode = getGeolocationResult.CountryCode,
                 CountryName = getGeolocationResult.Name,

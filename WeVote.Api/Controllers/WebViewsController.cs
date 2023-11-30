@@ -14,7 +14,7 @@ namespace WeVote.Api.Controllers
 
         }
 
-        [HttpPost("[controller]")]
+        [HttpPost("/webviews")]
         public async Task<IActionResult> InsertWebView([FromBody] InsertWebViewCommand command)
         {
             return await _mediator.Send(command);

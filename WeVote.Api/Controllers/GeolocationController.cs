@@ -14,7 +14,7 @@ namespace WeVote.Api.Controllers
         }
 
         [HttpGet()]
-        [Route("[Controller]")]
+        [Route("/geolocations")]
         public async Task<IActionResult> GetGeolocation()
         {
             var query = new GetGeolocationQuery();  

@@ -1,3 +1,4 @@
+using Serilog;
 using System.Reflection;
 using Wevote.Application;
 using WeVote.Infrastructure;
@@ -12,6 +13,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddApplicationServices();
 builder.Services.AddInfrastructureServices(builder.Configuration);
+builder.Host.UseSerilog((context, configuration) =>
+configuration.ReadFrom.Configuration(context.Configuration));
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy",
