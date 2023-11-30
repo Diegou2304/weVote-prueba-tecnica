@@ -1,0 +1,12 @@
+﻿@page "/"
+@using System.Text;
+@using WeVote.Client.Pages.GetGeolocation;
+
+    
+@inject HttpClient HttpClient
+<PageTitle>Index</PageTitle>
+
+<h2> Your country is: @getGeolocationResult.Name</h2>
+<h3> Your Currency is: @currencyName</h3>
+
+  

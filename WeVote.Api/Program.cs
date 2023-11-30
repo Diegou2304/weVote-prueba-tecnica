@@ -1,3 +1,8 @@
+using Serilog;
+using System.Reflection;
+using Wevote.Application;
+using WeVote.Infrastructure;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,8 +11,22 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddApplicationServices();
+builder.Services.AddInfrastructureServices(builder.Configuration);
 
+builder.Host.UseSerilog((context, configuration) =>
+configuration.ReadFrom.Configuration(context.Configuration));
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy",
+        builder => builder.AllowAnyOrigin().AllowAnyHeader()
+         ); 
+});
 var app = builder.Build();
+
+app.UseSerilogRequestLogging();
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -17,7 +36,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseCors("CorsPolicy");
 app.UseAuthorization();
 
 app.MapControllers();
