@@ -1,6 +1,4 @@
-﻿
-
-using MediatR;
+﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System.Net;

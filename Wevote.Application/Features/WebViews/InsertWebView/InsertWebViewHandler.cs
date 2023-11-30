@@ -31,7 +31,11 @@ namespace Wevote.Application.Features.WebViews.InsertWebView
                 Message = $"Web View was inserted correctly",
 
             };
-            var webView = PageViews.Create(request.CountryName, request.CountryCode, request.CurrencyName, request.IpAddress);
+            var webView = PageViews.Create(
+                                    request.CountryName, 
+                                    request.CountryCode, 
+                                    request.CurrencyName, 
+                                    request.IpAddress);
 
             var result = await _webViewsRepository.RegisterWebView(webView);
 
